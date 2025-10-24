@@ -36,9 +36,4 @@ jobs:
           # Envia (push) a imagem para o DockerHub
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-crud:${{ github.sha }}
 
-  # Segundo job: deploy da imagem na máquina virtual remota
-  deploy-to-vm:
-    needs: build-and-push  # Garante que esse job só será executado após o "build-and-push"
-    runs-on: ubuntu-latest
-
-    
+ 
